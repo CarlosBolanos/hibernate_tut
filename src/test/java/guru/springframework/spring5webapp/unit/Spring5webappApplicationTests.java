@@ -1,4 +1,4 @@
-package guru.springframework.spring5webapp;
+package guru.springframework.spring5webapp.unit;
 
 import guru.springframework.spring5webapp.repositories.BookRepository;
 import org.junit.jupiter.api.Test;
@@ -18,7 +18,6 @@ public class Spring5webappApplicationTests {
         long count = bookRepository.count();
         assertThat(count).isGreaterThan(0);
     }
-
 
     @Test
 	public void contextLoads() {

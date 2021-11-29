@@ -19,6 +19,7 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("DataInitializer");
+
         Book bookDDD = new Book("domain driven design", "123", "RandomHouse");
         Book saveDDD = bookRepository.save(bookDDD);
 
