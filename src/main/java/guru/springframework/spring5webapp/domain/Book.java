@@ -15,13 +15,13 @@ public class Book {
 
     private String title;
     private String isbn;
-    private String publishers;
+    private String publisher;
 
     public Book() { }
-    public Book(String title, String isbn, String publishers) {
+    public Book(String title, String isbn, String publisher) {
         this.title = title;
         this.isbn = isbn;
-        this.publishers = publishers;
+        this.publisher = publisher;
     }
 
     public Long getId() {
@@ -46,10 +46,10 @@ public class Book {
     }
 
     public String getPublishers() {
-        return publishers;
+        return publisher;
     }
     public void setPublishers(String publishers) {
-        this.publishers = publishers;
+        this.publisher = publishers;
     }
 
     @Override
