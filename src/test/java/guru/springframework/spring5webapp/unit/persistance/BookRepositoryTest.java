@@ -22,8 +22,8 @@ public class BookRepositoryTest {
 
     // @Test // this test doesnt work because it didnt trigger the data initialize command runner, since this is just testing the jpa persistance layer, nice
     // public void testBookRepository(){
-    // long count = bookRepository.count();
-    // assertThat(count).isGreaterThan(0);
+        // long count = bookRepository.count();
+        // assertThat(count).isGreaterThan(0);
     // }
 
     @Test
@@ -32,7 +32,7 @@ public class BookRepositoryTest {
     void testJpaTestSplice(){
         long countBefore = bookRepository.count();
         assertThat(countBefore).isEqualTo(2);
-        bookRepository.save(new Book("my book", "1234", "self"));
+        bookRepository.save(new Book("my book", "1234", "self", 1L));
 
         long countAfter = bookRepository.count();
         assertThat(countBefore).isLessThan(countAfter);
