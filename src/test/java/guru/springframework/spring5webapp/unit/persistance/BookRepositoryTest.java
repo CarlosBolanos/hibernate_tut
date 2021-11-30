@@ -31,8 +31,8 @@ public class BookRepositoryTest {
     @Commit
     void testJpaTestSplice(){
         long countBefore = bookRepository.count();
-        assertThat(countBefore).isEqualTo(2);
-        bookRepository.save(new Book("my book", "1234", "self"));
+        assertThat(countBefore).isEqualTo(4);
+        bookRepository.save(new Book("my book", "1234", "self", 1L));
 
         long countAfter = bookRepository.count();
         assertThat(countBefore).isLessThan(countAfter);
@@ -42,6 +42,6 @@ public class BookRepositoryTest {
     @Order(2)
     void testJpaTestSpliceTransaction(){
         long count = bookRepository.count();
-        assertThat(count).isEqualTo(3);
+        assertThat(count).isEqualTo(5);
     }
 }
