@@ -32,7 +32,7 @@ public class BookRepositoryTest {
     void testJpaTestSplice(){
         long countBefore = bookRepository.count();
         assertThat(countBefore).isEqualTo(2);
-        bookRepository.save(new Book("my book", "1234", "self", 1L));
+        bookRepository.save(new Book("my book", "1234", "self"));
 
         long countAfter = bookRepository.count();
         assertThat(countBefore).isLessThan(countAfter);
