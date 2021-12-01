@@ -2,18 +2,24 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet author="CB" id="data-1.2-1">
         <sql>
-            update book set author_id = 1 where id = 1;
+            update book set author_id = (
+                select id from user where email like 'cbolanos@gmail.com'
+            ) where isbn like '123';
         </sql>
     </changeSet>
     <changeSet author="CB" id="data-1.2-2">
         <sql>
-            update book set author_id = 1 where id = 2;
+            update book set author_id = (
+                select id from user where email like 'cbolanos@gmail.com'
+            ) where isbn like '456';
         </sql>
     </changeSet>
 
     <changeSet author="CB" id="data-1.2-3">
         <sql>
-            update book set author_id = 2 where id = 3;
+            update book set author_id = (
+                select id from user where email like 'rbolanos@gmail.com'
+            ) where isbn like '789';
         </sql>
     </changeSet>
 

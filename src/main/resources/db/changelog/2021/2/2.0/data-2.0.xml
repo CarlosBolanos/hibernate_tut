@@ -3,8 +3,14 @@
     <changeSet author="CB" id="data-2.0-1">
         <sql>
             insert
-            into book (isbn, publisher, title, author_id)
-            values ('321', 'liquibase', 'RandomHouse', 2);
+            into book (isbn, publisher, title, id, author_id)
+            values (
+                    '321',
+                    'liquibase',
+                    'RandomHouse',
+                    uuid(),
+                    ( select id from user where email like 'rbolanos@gmail.com' )
+            );
         </sql>
     </changeSet>
 </databaseChangeLog>

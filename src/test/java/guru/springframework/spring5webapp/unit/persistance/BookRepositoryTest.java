@@ -10,6 +10,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.annotation.Commit;
 
+import java.util.UUID;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
@@ -32,7 +34,7 @@ public class BookRepositoryTest {
     void testJpaTestSplice(){
         long countBefore = bookRepository.count();
         assertThat(countBefore).isEqualTo(4);
-        bookRepository.save(new Book("my book", "1234", "self", 1L));
+        bookRepository.save(new Book("my book", "1234", "self", UUID.randomUUID()));
 
         long countAfter = bookRepository.count();
         assertThat(countBefore).isLessThan(countAfter);

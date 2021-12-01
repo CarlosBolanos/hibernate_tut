@@ -1,36 +1,35 @@
 package guru.springframework.spring5webapp.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(length = 36)
+    private UUID id;
 
     private String title;
     private String isbn;
     private String publisher;
-    private Long authorId;
+//    private UUID authorId;
 
     public Book() { }
 
-    public Book(String title, String isbn, String publisher, Long authorId) {
+    public Book(String title, String isbn, String publisher, UUID authorId) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
-        this.authorId = authorId;
+//        this.authorId = authorId;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

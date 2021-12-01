@@ -3,15 +3,15 @@
     <changeSet author="CB" id="data-1.0-1">
         <sql>
             insert
-            into book (isbn, publisher, title)
-            values ('123', 'Domain driven design', 'RandomHouse');
+            into book (isbn, publisher, title, id)
+            values ('123', 'Domain driven design', 'RandomHouse', uuid());
         </sql>
     </changeSet>
     <changeSet author="CB" id="data-1.0-2">
         <sql>
             insert
-            into book (isbn, publisher, title)
-            values ('456', 'Oreily', 'Spring in action');
+            into book (isbn, publisher, title, id)
+            values ('456', 'Oreily', 'Spring in action', uuid());
       </sql>
     </changeSet>
 </databaseChangeLog>
