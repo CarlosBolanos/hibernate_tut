@@ -5,8 +5,8 @@
             validate="true"
             baseTableName="book"
             baseColumnNames="author_id"
-            referencedTableName="user"
+            referencedTableName="author"
             referencedColumnNames="id"
-            constraintName="fk_book_author_id_user_id"/>
+            constraintName="fk_tb__book_f__author_id___tb__author_f__id"/>
     </changeSet>
 </databaseChangeLog>

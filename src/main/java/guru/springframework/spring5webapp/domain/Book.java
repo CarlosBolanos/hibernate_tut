@@ -2,34 +2,33 @@ package guru.springframework.spring5webapp.domain;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.util.UUID;
 
 @Entity
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 36)
-    private UUID id;
+    private Long id;
 
     private String title;
     private String isbn;
     private String publisher;
-//    private UUID authorId;
+    private Long authorId;
 
     public Book() { }
 
-    public Book(String title, String isbn, String publisher, UUID authorId) {
+    public Book(String title, String isbn, String publisher, Long authorId) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
-//        this.authorId = authorId;
+        this.authorId = authorId;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -52,6 +51,14 @@ public class Book {
     }
     public void setPublishers(String publishers) {
         this.publisher = publishers;
+    }
+
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
     }
 
     @Override

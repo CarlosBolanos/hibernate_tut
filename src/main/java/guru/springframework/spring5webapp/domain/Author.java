@@ -2,33 +2,32 @@ package guru.springframework.spring5webapp.domain;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.util.UUID;
 
 @Entity
-public class User {
+public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 36)
-    private UUID id;
+    private Long id;
 
     private String username;
     private String password;
     private String email;
 
-    public User() { }
+    public Author() { }
 
-    public User(String username, String password, String email) {
+    public Author(String username, String password, String email) {
         this.username = username;
         this.password = password;
         this.email = email;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -60,7 +59,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        Author user = (Author) o;
         return Objects.equals(id, user.id);
     }
 
