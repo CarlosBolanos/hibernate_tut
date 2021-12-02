@@ -3,7 +3,6 @@ package guru.springframework.spring5webapp.unit.dao;
 
 import guru.springframework.spring5webapp.dao.AuthorDao;
 import guru.springframework.spring5webapp.dao.domain.Author;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -21,7 +20,6 @@ public class AuthorDaoIntegrationTest {
     @Autowired
     AuthorDao authorDao;
 
-    @Test
     void getByIdTest() throws SQLException {
         Author author = authorDao.getById(1L);
         assertThat(author).isNotNull();

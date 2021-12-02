@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 import java.sql.SQLException;
 
 @Component
-public class AuthorDaoImpl implements AuthorDao{
+public class JdbcAuthorDaoImpl implements JdbcAuthorDao {
     private final JdbcTemplate jdbcTemplate;
 
-    public AuthorDaoImpl(JdbcTemplate jdbcTemplate) {
+    public JdbcAuthorDaoImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
