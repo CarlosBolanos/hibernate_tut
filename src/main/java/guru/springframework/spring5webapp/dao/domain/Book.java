@@ -1,16 +1,10 @@
-package guru.springframework.spring5webapp.domain;
+package guru.springframework.spring5webapp.dao.domain;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
 public class Book {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(length = 36)
     private Long id;
-
     private String title;
     private String isbn;
     private String publisher;

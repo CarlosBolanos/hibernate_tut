@@ -1,8 +1,8 @@
-package guru.springframework.spring5webapp.unit.persistance;
+package guru.springframework.spring5webapp.unit.jpa;
 
-import guru.springframework.spring5webapp.domain.Book;
-import guru.springframework.spring5webapp.repositories.AuthorRepository;
-import guru.springframework.spring5webapp.repositories.BookRepository;
+import guru.springframework.spring5webapp.jpa.domain.Book;
+import guru.springframework.spring5webapp.jpa.repositories.AuthorRepository;
+import guru.springframework.spring5webapp.jpa.repositories.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

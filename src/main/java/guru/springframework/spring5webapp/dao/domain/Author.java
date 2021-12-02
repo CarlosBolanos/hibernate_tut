@@ -1,16 +1,10 @@
-package guru.springframework.spring5webapp.domain;
+package guru.springframework.spring5webapp.dao.domain;
 
-import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
 public class Author {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(length = 36)
     private Long id;
-
     private String username;
     private String password;
     private String email;
@@ -59,8 +53,8 @@ public class Author {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Author user = (Author) o;
-        return Objects.equals(id, user.id);
+        Author author = (Author) o;
+        return Objects.equals(id, author.id);
     }
 
     @Override
